@@ -1,9 +1,13 @@
-require(['Ember', 'asset!js/Todos'], function (Ember, Todos) {
-	// We'll avoid auto-initialization of the app while we manage our
-	// dependencies.
+require(['Ember', 'asset!index'], function (Ember, indexHtml) {
+	// Append the main HTML to the view
+	$(indexHtml).appendTo("body");
 
-	Todos.deferReadiness();
+	var Todos;
+	define('Todos', function() {
+		return (Todos = Ember.Application.create(););
+	});
 
+	// Load the index view into the page.
 	require([
 		'asset!js/router',
 		'asset!js/models/store',
