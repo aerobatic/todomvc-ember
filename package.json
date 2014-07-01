@@ -1,0 +1,26 @@
+{
+  "name": "todomvc-ember",
+  "version": "0.0.1",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-stylus": "^0.17.0",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-jslint": "^1.1.12",
+    "grunt-aerobatic": "^0.1.6",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-copy": "^0.5.0"
+  },
+  "dependencies": {
+    "grunt": "^0.4.5"
+  }
+}

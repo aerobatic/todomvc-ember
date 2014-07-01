@@ -1,27 +1,14 @@
-define(['Ember'], function (Ember) {
-	return Ember.TextField.extend({
-		classNames: ['edit'],
+/*global Todos, Ember */
+(function () {
+	'use strict';
 
-		valueBinding: 'todo.title',
-
-		change: function () {
-			var value = this.get('value');
-
-			if (Ember.isEmpty(value)) {
-				this.get('controller').removeTodo();
-			}
-		},
-
-		focusOut: function () {
-			this.set('controller.isEditing', false);
-		},
-
-		insertNewline: function () {
-			this.set('controller.isEditing', false);
-		},
-
-		didInsertElement: function () {
-			this.$().val(this.get('value')).focus();
-		}
+	Todos.EditTodoView = Ember.TextField.extend({
+		focusOnInsert: function () {
+			// Re-set input value to get rid of a reduntant text selection
+			this.$().val(this.$().val());
+			this.$().focus();
+		}.on('didInsertElement')
 	});
-});
+
+	Ember.Handlebars.helper('edit-todo', Todos.EditTodoView);
+})();

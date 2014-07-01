@@ -1,12 +1,9 @@
-define(['Ember', 'DS'], function (Ember, DS) {
-	return DS.Model.extend({
-		title: DS.attr('string'),
-		isCompleted: DS.attr('boolean'),
+/*global Todos, DS */
+(function () {
+	'use strict';
 
-		todoDidChange: function () {
-			Ember.run.once(this, function () {
-				this.get('store').commit();
-			});
-		}.observes('isCompleted', 'title')
+	Todos.Todo = DS.Model.extend({
+		title: DS.attr('string'),
+		isCompleted: DS.attr('boolean')
 	});
-});
+})();
